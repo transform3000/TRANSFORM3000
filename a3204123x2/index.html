@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  
+    <head>
+        <title>TRANSFORM 3000</title>
+        <link rel="icon" type="image/png" href=""/>
+        <meta name="description" content="3D Application">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
+        <script type="text/javascript" src="js/webxr.js"></script>
+        <script type="text/javascript" src="js/joystick.js"></script>
+        <script type="text/javascript" src="js/camera-cube-env.js"></script>
+        
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body onload="init();">
+        <a-scene loading-screen="enabled:false" vr-mode-ui="enabled: false" shadow="type: pcfsoft; autoUpdate: true;" renderer="antialias: true; colorManagement: true; physicallyCorrectLights: false;">
+      
+            <a-assets>
+				<a-asset-item id="Default.001" src="./assets/Default.001.gltf"></a-asset-item>
+              
+            </a-assets>
+
+            
+			<a-entity id="#Default.001" gltf-model="#Default.001" scale="1 1 1" position="-2.371014356613159 1.0993902683258057 -0.7485955357551575" visible="true" shadow="cast: true"   camera-cube-env="distance: 500; resolution: 512; repeat: true; interval: 400" ></a-entity>
+			<a-entity id="#Plane" gltf-model="#Plane" scale="1 1 1" position="-2.5509376525878906 -0.22815780341625214 -2.157028913497925" visible="true" shadow="cast: true" ></a-entity>
+
+            <a-entity id="player" 
+                position="1.194 -0.666 -2.191"
+                rotation="0.000 85.000 0.000" 
+                movement-controls="speed: 0.10000000149011612; fly:true;">
+                <a-entity id="camera" 
+                    camera="near: 0.001" 
+                    position="0 1.7000000476837158 0" 
+                    look-controls="pointerLockEnabled: true">
+                        <a-entity id="cursor" cursor="fuse: false;" animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 50; from: 	0.1 0.1 0.1; to: 1 1 1"
+                            position="0 0 -0.1"
+                            geometry="primitive: circle; radius: 0.001;"
+                            material="color: #CCC; shader: flat; visible:false;"
+                            >
+                        </a-entity>
+                </a-entity>
+                    <a-entity id="leftHand" oculus-touch-controls="hand: left" vive-controls="hand: left"></a-entity>
+					<a-entity id="rightHand" laser-controls oculus-touch-controls="hand: right" vive-controls="hand: right" ></a-entity>
+            </a-entity>
+
+ 
+            <a-entity light="color: #5fff14; intensity: 100.0; castShadow: true; shadowBias: -0.001; shadowCameraFar: 501.02; shadowCameraBottom: 12; shadowCameraFov: 101.79; shadowCameraNear: 0; shadowCameraTop: -5; shadowCameraRight: 10; shadowCameraLeft: -10; shadowRadius: 2" position="-0.308 4.524 -5.974"></a-entity>
+           
+            <a-entity light="color: #0037ff; intensity: 5.0; castShadow: false; shadowBias: -0.001; shadowCameraFar: 501.02; shadowCameraBottom: 12; shadowCameraFov: 101.79; shadowCameraNear: 0; shadowCameraTop: -5; shadowCameraRight: 10; shadowCameraLeft: -10; shadowRadius: 2" position="-2.559 2.632 3.690"></a-entity>
+
+            <a-entity light="type:spot; decay: 3.250; distance: 14.130; color: #d1ffe1; intensity: 100.0; castShadow: false; shadowBias: -0.001; shadowCameraFar: 501.02; shadowCameraBottom: 12; shadowCameraFov: 101.79; shadowCameraNear: 0; shadowCameraTop: -5; shadowCameraRight: 10; shadowCameraLeft: -10; shadowRadius: 2" position="-1.050 2.221 -1.801"></a-entity>
+
+            <a-entity light="color: #ff0000; intensity: 100.0; castShadow: false; shadowBias: -0.001; shadowCameraFar: 501.02; shadowCameraBottom: 12; shadowCameraFov: 101.79; shadowCameraNear: 0; shadowCameraTop: -5; shadowCameraRight: 10; shadowCameraLeft: -10; shadowRadius: 2" position="-2.389 1.538 0.606"></a-entity>
+
+            <a-entity light="color: #ff0000; intensity: 1.0; castShadow: false; shadowBias: -0.001; shadowCameraFar: 501.02; shadowCameraBottom: 12; shadowCameraFov: 101.79; shadowCameraNear: 0; shadowCameraTop: -5; shadowCameraRight: 10; shadowCameraLeft: -10; shadowRadius: 2" position="-1.552 1.212 -2.239"></a-entity>
+
+            <a-entity light="color: #51ff00; intensity: 20.0; castShadow: false; shadowBias: -0.001; shadowCameraFar: 501.02; shadowCameraBottom: 12; shadowCameraFov: 101.79; shadowCameraNear: 0; shadowCameraTop: -5; shadowCameraRight: 10; shadowCameraLeft: -10; shadowRadius: 2" position="-3.015 4.232 -1.518"></a-entity>
+
+
+            
+            
+  
+            <a-sky src="#sky" material="color: #000000;" geometry="" rotation="0 90 0"></a-sky>
+        </a-scene>
+    </body>
+</html>
+
