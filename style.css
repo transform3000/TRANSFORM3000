@@ -96,6 +96,17 @@ html, body {
       
   }
 
+  .card1 {
+    border: 2px solid #d6d6d6;
+    padding:5px;
+    margin:20px;
+    border-radius:20px;
+    max-width:190px;
+    margin-left:14%;
+    transition: box-shadow 2.30s ease;
+    
+}
+
   .card:hover,
   .card:focus,
   .card:active {
@@ -104,6 +115,16 @@ html, body {
     
     
     box-shadow: rgba(93, 0, 155, 0.56) -10px 20px 400px 500px;
+  }
+
+  .card1:hover,
+  .card1:focus,
+  .card1:active {
+    
+    transition: box-shadow 1.00s ease;
+    
+    
+    box-shadow: rgba(255, 0, 0, 0.719) -10px 20px 400px 500px;
   }
 
   a.opensea:link
