@@ -261,6 +261,7 @@ html, body {
 
 p {
     margin-left:15pt;
+    max-width:70%;
 }
 
 .card {
