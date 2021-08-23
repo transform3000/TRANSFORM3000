@@ -2,8 +2,5 @@
  
  Instructions to run website:
  
- website is online at: https://transform3000.github.io/
+ website is online at: https://transform3000.com
 
- or
-
-live server with visual studio code
